@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Урок №4. Шрифты в CSS</title>
+</head>
+
+<body>
+
+    <!-- ? Хочу оформить урок покрасивее, без использования CSS стилей. К сожалению, придется использовать устаревшие HTML свойства таблиц -->
+
+    <!-- * Шапка страницы header -->
+    <header class="header">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <!-- * Верхняя часть -->
+                <td width="20%" align="center" bgcolor="#052535">
+                    <!-- * Простите Евгенний за использование картинки, если нельзя, удалю -->
+                    <img width="200" src="img/like.png" alt="Картинка Евгения">
+                </td>
+                <td width="80%" bgcolor="#052535">
+                    <font size="5" color="white" face="Arial">Урок №4. Свойства CSS для работы со шрифтами</font>
+                </td>
+            </tr>
+        </table>
+    </header>
+
+
+    <!-- * Основной контент страницы main -->
+    <main>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <!-- Отступ слева 20% -->
+                <td width="20%" bgcolor="#052535"></td>
+
+
+                <!-- Средняя, основная часть, в которой будет размещяться весь контент -->
+                <td width="60%">
+
+                    <!-- BEGIN ОСНОВНОЙ КОНТЕНТ -->
+
+                    <!-- Begin Раздел подключение шрифтов -->
+                    <div class="block-article">
+                        <h2>Подключение файлов шрифтов на CSS странице</h2>
+                        <p class="select-code">Запись в CSS файле</p>
+                        <div class="block-code">
+                        <code>
+                            @font-face { <br>
+                                font-family: 'Gilroy'; <br>
+                                src: url('../fonts/Gilroy-BoldItalic.eot'); <br>
+                                src: local('Gilroy Bold Italic'), local('Gilroy-BoldItalic'), <br>
+                                    url('../fonts/Gilroy-BoldItalic.eot?#iefix') format('embedded-opentype'), <br>
+                                    url('../fonts/Gilroy-BoldItalic.woff') format('woff'), <br>
+                                    url('../fonts/Gilroy-BoldItalic.ttf') format('truetype'); <br>
+                                font-weight: bold; <br>
+                                font-style: italic; <br>
+                            }
+                        </code>
+                        </div>
+                        <p class="select-code">Результат</p>
+                        <div class="block-example">
+                            <h2 class="font-connect1">Я заголовок второго уровня, выведенный шрифтом Gilroy, который подключен с папки fonts.</h2>
+                        </div>
+                    </div>
+                    <!-- End Раздел подключение шрифтов -->
+
+                    <!-- Begin Раздел Свойство Font-Family -->
+                    <div class="block-article">
+                        <h2>Свойство font-family</h2>
+                        <p>Если название шрифта состоит из 2 слов, он заключается в кавычки.</p>
+                        <p>emmet - ff, ffa (font-family: arial)</p>
+                        <dl>
+                            <dt><b>Значения свойства font-family</b></dt>
+                            <dd>serif - шрифт с засечками</dd>
+                            <dd>sans-serif - рубленный шрифт (без засечек)</dd>
+                            <dd>cursive - курсивные шрифты</dd>
+                            <dd>fantasy - декоративные шрифты</dd>
+                            <dd>monospace - моноширинные шрифты</dd>
+                        </dl>
+                        <p class="select-code">Запись в CSS файле</p>
+                        <div class="block-code">
+                            <code>
+                            p.arial{ <br>
+                                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; <br>
+                                font-size: 18px; <br>
+                                font-weight: bold; <br>
+                            } <br><br>
+                            p.gilroy{ <br>
+                                font-family: Gilroy; <br>
+                                font-size: 18px; <br>
+                                  } <br><br>
+                            .proximanova{ <br>
+                                font-family: ProximaNova; <br>
+                                font-style: italic; <br>
+                                font-size: 18px; <br>
+                            }
+                            </code>
+                        </div>
+                        <p class="select-code">Результат</p>
+                        <div class="block-example">
+                            <p class="arial">Я параграф выведенный шрифтом Arial. Я жирный и размер у меня 18 пикселей.</p>
+                            <p class="gilroy">Я параграф выведенный шрифтом Gilroy. У меня размер тоже 18 пикселей</p>
+                            <p class="proximanova">Я параграф выведенный шрифтом ProximaNova, стиль у меня курсивный. Размер так же у меня 18 пикселей.</p>
+                        </div>
+                    </div>
+                    <!-- End Раздел Свойство Font-Family -->
+
+                    <!-- Begin Свойство Font-Size -->
+                    <div class="block-article">
+                        <h2>Свойство font-size.</h2>
+                        <p>Font-Size - размер шрифта. По умолчанию в браузере используется размер 16px.</p>
+                        <p>emmet - fz16 (font-size: 16px)</p>
+                        <p class="select-code">Запись в CSS файле</p>
+                        <div class="block-code">
+                            <code>
+                                .size16{ <br>
+                                    font-size: 16px; <br>
+                                } <br><br>
+                                .size18{ <br>
+                                    font-size: 18px; <br>
+                                } <br><br>
+                                .size24{ <br>
+                                    font-size: 24px; <br>
+                                } <br>
+                            </code>
+                        </div>
+                        <p class="select-code">Результат</p>
+                        <div class="block-example">
+                            <p class="size16">Я параграф. У меня размер шрифта 16 пикселей</p>
+                            <p class="size18">Я параграф. У меня размер шрифта 18 пикселей</p>
+                            <p class="size24">Я параграф. У меня размер шрифта 24 пикселя</p>
+                        </div>
+                    </div>
+                    <!-- End Свойство Font-Size -->
+
+                    <!-- Begin Свойство Font-Style -->
+                    <div class="block-article">
+                        <h2>Свойство Font-Style</h2>
+                        <dl>
+                            <dt><b>Значения свойства Font-Style</b></dt>
+                            <dd>font-style: normal (по умолчанию)</dd>
+                            <dd>font-style: italic (система подключает отдельный пакет шрифтов, а не просто наклоняет текст)</dd>
+                            <dd>font-style: oblique (как раз наклоняет шрифт)</dd>
+                        </dl>
+                        <p>emmet - fsi (font-stile: italic)</p>                
+                        <p class="select-code">Запись в CSS файле</p>
+                        <div class="block-code">
+                            <code>
+                                .normal{<br>
+                                    font-style: normal; <br>
+                                } <br><br>
+                                .italic{ <br>
+                                    font-style: italic; <br>
+                                } <br><br>
+                                .oblique{ <br>
+                                    font-style: oblique; <br>
+                                } <br>
+                            </code>
+                        </div>
+                        <p class="select-code">Результат</p>
+                        <div class="block-example">
+                            <p class="normal">Я параграф, написанный со стилем normal. Мой стиль используется по умолчанию браузером.</p>
+                            <p class="italic">Я параграф, написанный со стилем italic. Для моего написания, система подключает отдельный пакет шрифтов, а не просто наклоняет текст.</p>
+                            <p class="oblique">Я параграф, написанный как раз наклоненным стилем, только визуально не понятна разница между моим стилем и стилем italic</p>
+                        </div>
+                    </div>
+                    <!-- End Свойство Font-Style -->
+
+                    <!-- Begin Свойство Font-Weight -->
+                    <div class="block-article">
+                        <h2>Свойство Font-Weight</h2>
+                        <p>Свойство Font-Weight определяет толщину (жирность) шрифта и имеет следующие значения:</p>
+                        <dl>
+                            <dt><b>font-weight</b></dt>
+                            <dd>100 - thin</dd>
+                            <dd>300 - lite</dd>
+                            <dd>400 - normal</dd>
+                            <dd>500 - medium</dd>
+                            <dd>600 - semibold</dd>
+                            <dd>700 - bold</dd>
+                            <dd>900 - black</dd>
+                        </dl>
+                        <p>Если указать свойство, которое не существует у этого шрифта, то свойство не применится и будет отображаться normal</p>
+                        <p>emmet - fw700 (font-weight: 700)</p>
+                        <p class="select-code">Запись в CSS файле</p>
+                        <div class="block-code">
+                            <code>
+                                .fw-thin{ <br>
+                                    font-weight: 100;<br>
+                                }<br><br>
+                                .fw-lite{<br>
+                                    font-weight: 300;<br>
+                                }<br><br>
+                                .fw-normal{<br>
+                                    font-weight: normal;<br>
+                                }<br><br>
+                                .fw-medium{<br>
+                                    font-weight: 500;<br>
+                                }<br><br>
+                                .fw-semibold{<br>
+                                    font-weight: 600;<br>
+                                }<br><br>
+                                .fw-bold{<br>
+                                    font-weight: 700;<br>
+                                }<br><br>
+                                .fw-black{<br>
+                                    font-weight: 900;<br>
+                                }<br>
+                            </code>
+                        </div>
+                        <p class="select-code">Результат</p>
+                        <div class="block-example">
+                            <p class="fw-thin">Я параграф, и так как желательно для меня дофигабуков, то дальше я буду писаться рыбой. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus eaque ea nobis alias quidem incidunt adipisci. A, assumenda labore.</p>
+                            <p class="fw-lite">Я параграф, и так как желательно для меня дофигабуков, то дальше я буду писаться рыбой. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus eaque ea nobis alias quidem incidunt adipisci. A, assumenda labore.</p>
+                            <p class="fw-normal">Я параграф, и так как желательно для меня дофигабуков, то дальше я буду писаться рыбой. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus eaque ea nobis alias quidem incidunt adipisci. A, assumenda labore.</p>
+                            <p class="fw-medium">Я параграф, и так как желательно для меня дофигабуков, то дальше я буду писаться рыбой. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus eaque ea nobis alias quidem incidunt adipisci. A, assumenda labore.</p>
+                            <p class="fw-semibold">Я параграф, и так как желательно для меня дофигабуков, то дальше я буду писаться рыбой. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus eaque ea nobis alias quidem incidunt adipisci. A, assumenda labore.</p>
+                            <p class="fw-bold">Я параграф, и так как желательно для меня дофигабуков, то дальше я буду писаться рыбой. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus eaque ea nobis alias quidem incidunt adipisci. A, assumenda labore.</p>
+                            <p class="fw-black">Я параграф, и так как желательно для меня дофигабуков, то дальше я буду писаться рыбой. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus eaque ea nobis alias quidem incidunt adipisci. A, assumenda labore.</p>
+                        </div>
+                    </div>
+                    <!-- End Свойство Font-Weight -->
+
+                    <!-- Begin Свойство Color -->
+                    <div class="block-article">
+                        <h2>Свойство Color</h2>
+                        <p>Свойство color - определяет цвет текста. Это свойство наследуется для всех на странице, кроме ссылок.</p>
+                        <p>emmet - с (color:#000)</p>
+                        <dl>
+                            <dt><b>Типы записи значений color:</b></dt>
+                            <dd>red - редко используется на практике;</dd>
+                            <dd>#ffffff - шестнадцатеричный код цвета (часто применяется)</dd>
+                            <dd>rgba(59, 180, 59, 0.4); - (rgba код цвета с прозрачностью)</dd>
+                        </dl>
+                        <p class="select-code">Запись в CSS файле</p>
+                        <div class="block-code">
+                            <code>
+                                .green{ <br>
+                                    color:green; <br>
+                                } <br><br>
+                            </code>
+                        </div>
+                        <p class="select-code">Результат</p>
+                        <div class="block-example">
+                            <p class="green">Далеко-далеко за, словесными горами в стране гласных и согласных живут рыбные тексты. Ручеек напоивший которое продолжил грустный они имеет переписали путь языком.</p>
+                        </div>
+                    </div>
+                    <!-- End Свойство Color -->
+
+                    <!-- Begin Свойство Text-Align -->
+                    <div class="block-article">
+                        <h2>Свойство text-align определяет горизонтальное выравнивание текста в элементе.</h2>
+                        <dl>
+                            <dt><b>Значения свойства Text-Align</b></dt>
+                            <dd>left (по умолчанию)</dd>
+                            <dd>right (справа)</dd>
+                            <dd>center (по центру)</dd>
+                            <dd>justify (распределяет по всему элементу)</dd>
+                        </dl>
+                        <p>emmet - tac (text-align: center)</p>
+                        <p class="select-code">Запись в CSS файле</p>
+                        <div class="block-code">
+                            <code>
+                                .left{ <br>
+                                    text-align-last: left;<br>
+                                }<br><br>
+                                .right{<br>
+                                    text-align: right;<br>
+                                }<br><br>
+                                .center{<br>
+                                    text-align: center;<br>
+                                }<br><br>
+                                .justify{<br>
+                                    text-align: justify;<br>
+                                }<br>
+                            </code>
+                        </div>
+                        <p class="select-code">Результат</p>
+                        <div class="block-example">
+                            <p class="left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam id, voluptas eaque illo molestias rem inventore deserunt laudantium rerum itaque?</p>
+                            <p class="right">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Семантика над собрал всеми что. Великий алфавит бросил дорогу составитель.</p>
+                            <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint molestiae ipsam illum reprehenderit accusantium. Provident dolorum est minus id odio!</p>
+                            <p class="justify">Далеко-далеко за словесными горами в стране гласных, и согласных живут рыбные тексты. Снова путь не lorem грустный однажды пунктуация использовало от всех над диких агентство парадигматическая, точках даже предложения безопасную пустился. Это, проектах собрал, себя взобравшись безорфографичный грустный лучше великий родного рукопись заглавных страна коварных инициал запятых, если рекламных последний? Пояс, он парадигматическая.</p>
+                        </div>
+                    </div>
+                    <!-- End Свойство Text-Align -->
+
+                    <!-- Begin Свойство Text-Decoration -->
+                    <div class="block-article">
+                        <h2>Свойство text-decoration</h2>
+                        <p>Свойство text-decoration определяет оформление текста.</p>
+                        <p>emmet - tdu (text-decoration: underline)</p>
+                        <dl>
+                            <dt><b>Значения свойства Text-Decoration</b></dt>
+                            <dd>none (без декорации) (по умолчанию)</dd>
+                            <dd>underline (линия под текстом)</dd>
+                            <dd>overline (линия над текстом)</dd>
+                            <dd>line-through (зачеркнутый)</dd>
+                        </dl>
+                        <p class="select-code">Зпись в CSS файле</p>
+                        <div class="block-code">
+                            <code>
+                                .underline{ <br>
+                                    text-decoration: underline;<br>
+                                }<br><br>
+                                .overline{<br>
+                                    text-decoration: overline;<br>
+                                }<br><br>
+                                .through{<br>
+                                    text-decoration: line-through;<br>
+                                }<br>
+                            </code>
+                        </div>
+                        <p class="select-code">Результат</p>
+                        <div class="block-example">
+                            <p class="underline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo repellendus exercitationem asperiores laboriosam odit suscipit voluptas voluptate inventore vitae molestias?</p>
+                            <p class="overline">Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты. Диких, lorem мир курсивных деревни парадигматическая букв пояс океана приставка?</p>
+                            <p class="through">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis excepturi perspiciatis soluta quod illo magni exercitationem labore numquam sunt quia.</p>
+                        </div>
+                    </div>
+                    <!-- End Свойство Text-Decoration -->
+
+                    <!-- Begin Свойство Text-Shadow -->
+                    <div class="block-article">
+                        <h2>Свойство Text-Shadow</h2>
+                        <p>Свойство Text-Shadow - определяет тень под текстом.</p>
+                        <dl>
+                            <dt><b>Формат записи:</b></dt>
+                            <dd>2px 2px 3px rgba(0, 0, 0, 0.8) (сдвиг по горизонтали, сдвиг по вертикали, размытость, цвет)</dd>
+                        </dl>
+                        <p class="select-code">Запись в CSS файле</p>
+                        <div class="block-code">
+                            <code>
+                                .shadow{ <br>
+                                    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8) <br>
+                                } <br>
+                            </code>
+                        </div>
+                        <p class="select-code">Результат</p>
+                        <div class="block-example">
+                            <p class="shadow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et sunt minima ex magnam itaque veritatis quis nobis inventore, aliquid perferendis!</p>
+                        </div>
+                    </div>
+                    <!-- End Свойство Text-Shadow -->
+
+                    <!-- Begin Свойство Text-Transform -->
+                    <div class="block-article">
+                        <h2>Свойство Text-Transform</h2>
+                        <p>Свойство text-transform контролирует в тексте выделение заглавными буквами</p>
+                        <dl>
+                            <dt><b>Значения свойства Text-Transform</b></dt>
+                            <dd>none - (по умолчанию)</dd>
+                            <dd>uppercase - (текст в верхнем регистре)</dd>
+                            <dd>lowercase - (текст в нижнем регистре)</dd>
+                            <dd>capitalize - (каждое слово с заглавной буквы)</dd>
+                        </dl>
+                        <p>emmet - ttu (text-transform: uppercase)</p>
+                        <p class="select-code">Запись в CSS файле</p>
+                        <div class="block-code">
+                            <code>
+                                .uppercase{ <br>
+                                    text-transform: uppercase;<br>
+                                }<br><br>
+                                .lowercase{<br>
+                                    text-transform: lowercase;<br>
+                                }<br><br>
+                                .capitalize{<br>
+                                    text-transform: capitalize;<br>
+                                }<br>
+                            </code>
+                        </div>
+                        <p class="select-code">Результат</p>
+                        <div class="block-example">
+                            <p class="uppercase">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores neque saepe minus ducimus eius, molestiae sit aspernatur. Quis, nulla similique.</p>
+                            <p class="lowercase">Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты. Выйти власти рекламных сих рот они его оксмокс заманивший гор.</p>
+                            <p class="capitalize">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores neque saepe minus ducimus eius, molestiae sit aspernatur. Quis, nulla similique.</p>
+                        </div>
+                    </div>
+                    <!-- End Свойство Text-Transform -->
+
+                    <!-- Begin Свойство Line-Height -->
+                    <div class="block-article">
+                        <h2>Свойство Line-Height</h2>
+                        <p>Свойство Line-Height - определяет высоту строки. Делает текст более разреженным. Равна высоте шрифта (по умолчанию). Можно записывать процентами, пикселями, единицами.</p>
+                        
+                        <p class="select-code">Запись в CSS файле</p>
+                        <div class="block-code">
+                            <code>
+                                .height{
+                                    line-height: 200%;
+                                }
+                            </code>
+                        </div>
+                        <p class="select-code">Результат</p>
+                        <div class="block-example">
+                            <p class="height">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque nostrum, eius corrupti beatae dignissimos repellendus! Totam aut neque cum sequi corrupti impedit eaque porro tempora praesentium minus sed, nihil laudantium? Vel velit commodi inventore tempora magnam aliquam fugit soluta. Omnis, autem quod placeat aut perferendis quasi impedit labore provident reiciendis?</p>
+                        </div>
+                    </div>
+                    <!-- End Свойство Line-Height -->
+
+                    <!-- Begin Свойство Text-Indent -->
+                    <div class="block-article">
+                        <h2>Свойство Text-Indent</h2>
+                        <p>Text-Indent - красная строка. Может быть и отрицательной</p>
+                        <p>emmet - ti20 (text-indent: 20px;)</p>
+                        <p class="select-code">Запись в CSS файле</p>
+                        <div class="block-code">
+                            <code>
+                                .indent{
+                                    text-indent: 50px;
+                                }
+                            </code>
+                        </div>
+                        <p class="select-code">Результат</p>
+                        <div class="block-example">
+                            <p class="indent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est expedita tenetur illo dolore ut odio, quo sint autem, esse quia dolorum obcaecati rerum, consequuntur hic iure quisquam. Porro beatae rerum voluptates earum dicta nesciunt pariatur illo consectetur laboriosam laborum id labore dolore ea eos inventore rem, ab ducimus, iusto accusamus!</p>
+                        </div>
+                    </div>
+                    <!-- End Свойство Text-Indent -->
+
+                    <!-- Begin Свойство Letter-Spacing -->
+                    <div class="block-article">
+                        <h2>Свойство Letter-Spacing</h2>
+                        <p>Letter-Spacing - растояние между буквами</p>
+                        <p>emmet - ls30 (letter-spacing: 30px)</p>
+                        <p class="select-code">Запись в CSS файле</p>
+                        <div class="block-code">
+                            <code>
+                                .spacing{ <br>
+                                    letter-spacing: 5px; <br>
+                                } <br>
+                            </code>
+                        </div>
+                        <p class="select-code">Результат</p>
+                        <div class="block-example">
+                            <p class="spacing">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae sit vitae deserunt minima minus nostrum quam nulla expedita ullam optio possimus est recusandae quia explicabo ex esse impedit illo magni, provident blanditiis in ab praesentium! Sint reprehenderit vero eum odio sit eligendi maiores debitis dolorum non quas? Quia, impedit accusamus!</p>
+                        </div>
+                    </div>
+                    <!-- End Свойство Letter-Spacing -->
+
+                    <!-- Begin Свойство Word-Spacing -->
+                    <div class="block-article">
+                        <h2>Свойство Word-Spacing</h2>
+                        <p>Word-Spacing - задает растояние между словами (не одно и тоже что и justify)</p>
+                        <p>emmet - ws5 (word-spacing: 5px)</p>
+                        <p class="select-code">Запись в CSS файле</p>
+                        <div class="block-code">
+                            <code>
+                                .word{ <br>
+                                    word-spacing: 20px; <br>
+                                } <br>
+                            </code>
+                        </div>
+                        <p class="select-code">Результат</p>
+                        <div class="block-example">
+                            <p class="word">Lorem ipsum dolor sit, amet consectetur adipisicing elit. At mollitia rerum culpa voluptatibus sit, recusandae tenetur! Provident, quasi. Quis fugiat odio ex! Voluptates quibusdam corporis molestias in aliquid? Facilis mollitia nobis accusantium nesciunt, totam, repellendus praesentium omnis eveniet fuga est illo in sequi, pariatur voluptatem inventore unde corporis numquam eaque.</p>
+                        </div>
+                    </div>
+                    <!-- End Свойство Word-Spacing -->
+
+                    <!--  Begin Свойство  
+                    <div class="block-article">
+                        <h2></h2>
+                        <p></p>
+                        <p>emmet - </p>
+                        <dl>
+                            <dt><b></b></dt>
+                        </dl>
+                        <p class="select-code">Запись в CSS файле</p>
+                        <div class="block-code">
+                            <code>
+
+                            </code>
+                        </div>
+                        <p class="select-code">Результат</p>
+                        <div class="block-example"></div>
+                    </div>
+                     End Свойство   -->
+
+                    <!-- END ОСНОВНОЙ КОНТЕНТ -->
+                    
+
+                </td>
+
+
+                <!-- * Отступ справа 20% -->
+                <td width="20%" bgcolor="#052535"></td>
+            </tr>
+        </table>
+    </main>
+
+
+    <!-- * Подвал страницы footer -->
+    <footer>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <!-- * нижняя часть -->
+                <td bgcolor="#052535">
+                    <font color="gray">
+                        <h6>Исполнитель ДЗ: Сычев Дмитрий</h6>
+                        <h6>mail: verstakmaster@mail.ru</h6>
+                    </font>
+                </td>
+            </tr>
+        </table>
+    </footer>
+</body>
+
+</html>
